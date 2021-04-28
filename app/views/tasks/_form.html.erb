@@ -1,16 +1,16 @@
-<%= form_with(model: tasks, local: true) do |f| %>
-    <% if message.errors.any? %>
+<%= form_with(model: task, local: true) do |f| %>
+    <% if task.errors.any? %>
         <div id="error_explanation">
             <ul>
-                <% message.errors.full_messages.each do |tsk| %>
+                <% task.errors.full_messages.each do |tsk| %>
                     <li><%= tsk %></li>
                 <% end %>
             </ul>
         </div>
     <% end %>
     
-    <%= f.label :tasks, 'タスク' %>
-    <%= f.text_field :tasks %>
+    <%= f.label :content, 'タスク' %>
+    <%= f.text_field :content %>
     
     <%= f.label :status, 'ステータス' %>
     <%= f.text_field :status %>
