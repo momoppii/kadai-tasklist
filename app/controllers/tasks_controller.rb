@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     
     def create
         @task = current_user.tasks.build(task_params)
-
+    
         if @task.save
             flash[:success] = 'Task が正常に作成されました'
             redirect_to @task
@@ -56,6 +56,6 @@ class TasksController < ApplicationController
     end
     
     def task_params
-        params.require(:task).permit(:user_id, :content, :status)
+        params.require(:task).permit(:content, :status)
     end
 end
